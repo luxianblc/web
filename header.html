@@ -1,0 +1,35 @@
+<header class="netease-header">
+    <div class="header-container">
+        <div class="logo">
+            <i class="fas fa-music"></i>
+            <span>网易云音乐</span>
+        </div>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="搜索歌曲、歌手、专辑..." 
+                    onkeypress="if(event.key === 'Enter') performSearch()"
+                >
+                <button onclick="clearSearch()" class="clear-btn">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <button onclick="performSearch()" class="search-btn">
+                <i class="fas fa-search"></i> 智能搜索
+            </button>
+        </div>
+        
+        <div class="header-actions">
+            <button onclick="toggleTheme()" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button onclick="login()" class="login-btn">
+                <i class="fas fa-user"></i> 登录
+            </button>
+        </div>
+    </div>
+</header>
