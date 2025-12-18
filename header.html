@@ -2,24 +2,19 @@
     <div class="header-container">
         <div class="logo">
             <i class="fas fa-music"></i>
-            <span>网易云音乐</span>
+            <span>音乐播放器</span>
         </div>
-        
+
         <div class="search-container">
             <div class="search-box">
                 <i class="fas fa-search"></i>
-                <input 
-                    type="text" 
-                    id="searchInput" 
-                    placeholder="输入关键词或高级搜索语法..." 
-                    onkeypress="if(event.key === 'Enter') performSearch()"
-                >
+                <input type="text" id="searchInput" placeholder="输入关键词或高级搜索语法..." onkeypress="if(event.key === 'Enter') performSearch()">
                 <button onclick="clearSearch()" class="clear-btn">
                     <i class="fas fa-times"></i>
                 </button>
                 <div class="search-suggestions" id="searchSuggestions"></div>
             </div>
-            
+
             <div class="search-options">
                 <select id="searchType" onchange="updateSearchType()">
                     <option value="1">单曲</option>
@@ -29,23 +24,23 @@
                     <option value="1006">歌词</option>
                     <option value="1004">MV</option>
                 </select>
-                
+
                 <select id="searchOrder" onchange="updateSearchParams()">
                     <option value="hot">按热度</option>
                     <option value="time">按时间</option>
                     <option value="score">按评分</option>
                 </select>
             </div>
-            
+
             <button onclick="toggleAdvancedSearch()" class="adv-search-btn" title="高级搜索">
                 <i class="fas fa-sliders-h"></i>
             </button>
-            
+
             <button onclick="performSearch()" class="search-btn">
                 <i class="fas fa-search"></i> 智能搜索
             </button>
         </div>
-        
+
         <div class="header-actions">
             <button onclick="toggleTheme()" class="theme-toggle">
                 <i class="fas fa-moon"></i>
@@ -58,12 +53,12 @@
             </button>
         </div>
     </div>
-    
+
     <!-- 高级搜索面板 -->
     <div class="advanced-search-panel" id="advancedSearchPanel">
         <div class="advanced-search-content">
             <h4><i class="fas fa-cog"></i> 高级搜索选项</h4>
-            
+
             <div class="advanced-filters">
                 <div class="filter-group">
                     <label>
@@ -79,7 +74,7 @@
                         <span>排除无版权</span>
                     </label>
                 </div>
-                
+
                 <div class="filter-group">
                     <label>时间范围：</label>
                     <div class="time-filters">
@@ -89,13 +84,13 @@
                         <button class="time-filter" onclick="setTimeFilter('week')">一周内</button>
                     </div>
                 </div>
-                
+
                 <div class="filter-group">
                     <label>每页数量：</label>
                     <input type="range" id="searchLimit" min="10" max="100" value="30" onchange="updateLimitValue()">
                     <span id="limitValue">30</span>
                 </div>
-                
+
                 <div class="search-syntax">
                     <h5><i class="fas fa-code"></i> 搜索语法提示：</h5>
                     <ul>
@@ -106,7 +101,7 @@
                     </ul>
                 </div>
             </div>
-            
+
             <div class="advanced-actions">
                 <button onclick="applyAdvancedFilters()" class="btn-primary">
                     <i class="fas fa-check"></i> 应用筛选
