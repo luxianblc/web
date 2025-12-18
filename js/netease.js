@@ -168,3 +168,29 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
         document.documentElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
     }
 });
+// 在netease.js中添加这些函数
+function setupSearch() {
+    // 确保搜索输入框获得焦点时显示建议
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('focus', function() {
+            if (this.value.length > 0 && enhancedSearch) {
+                enhancedSearch.showSearchSuggestions(this.value);
+            }
+        });
+    }
+    
+    // 监听搜索类型变化
+    const searchType = document.getElementById('searchType');
+    if (searchType && enhancedSearch) {
+        searchType.addEventListener('change', () => enhancedSearch.updateSearchType());
+    }
+}
+
+// 在initApp函数中调用
+function initApp() {
+    loadSettings();
+    setupTheme();
+    loadRecommendations();
+    setupSearch(); // 添加这一行
+}
